@@ -1,0 +1,19 @@
+import api from "./api";
+
+export const detectEmotion = async (audioFile) => {
+  const formData = new FormData();
+
+  formData.append("file", audioFile);
+
+  const response = await api.post(
+    "/emotion/predict",
+    formData,
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    }
+  );
+
+  return response.data;
+};

@@ -1,0 +1,922 @@
+/* =========================================================
+   PAWSENSE — EMOTION DETECTION
+   ========================================================= */
+
+.emotion-page {
+  min-height: 100vh;
+  padding: 38px 50px 60px;
+  background: #f6f8f7;
+  color: #263b37;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.emotion-header {
+  max-width: 1080px;
+  margin: 0 auto 38px;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+
+  border: 1px solid #dfe8e4;
+  background: #ffffff;
+  color: #416b62;
+
+  padding: 8px 14px;
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 8px rgba(45, 75, 68, 0.05);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.back-button:hover {
+  background: #f1f7f4;
+  border-color: #bfd3cc;
+  transform: translateY(-1px);
+}
+
+.emotion-heading {
+  margin-top: 30px;
+  max-width: 650px;
+}
+
+.feature-label {
+  display: inline-block;
+
+  margin-bottom: 9px;
+
+  color: #5d8b80;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+}
+
+.emotion-heading h1 {
+  margin: 0;
+
+  color: #203f38;
+
+  font-size: 38px;
+  line-height: 1.1;
+  font-weight: 700;
+
+  letter-spacing: -0.8px;
+}
+
+.emotion-heading p {
+  max-width: 570px;
+
+  margin: 10px 0 0;
+
+  color: #71827d;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   MAIN UPLOAD CARD
+   ========================================================= */
+
+.emotion-card {
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 42px 55px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e9e5;
+  border-radius: 24px;
+
+  text-align: center;
+
+  box-shadow:
+    0 15px 45px rgba(39, 69, 62, 0.07);
+}
+
+
+/* =========================================================
+   UPLOAD ICON
+   ========================================================= */
+
+.upload-icon {
+  width: 68px;
+  height: 68px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #edf6f2;
+
+  border: 1px solid #dcebe5;
+
+  border-radius: 50%;
+}
+
+.upload-icon span {
+  font-size: 28px;
+}
+
+
+/* =========================================================
+   UPLOAD HEADING
+   ========================================================= */
+
+.emotion-card h2 {
+  margin: 0;
+
+  color: #294a42;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.upload-description {
+  max-width: 550px;
+
+  margin: 9px auto 27px;
+
+  color: #7a8985;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   FILE UPLOAD AREA
+   ========================================================= */
+
+.audio-upload {
+  width: 100%;
+  min-height: 145px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  border: 1.5px dashed #a8c4bb;
+  border-radius: 17px;
+
+  background: #fafcfb;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.audio-upload:hover {
+  background: #f3f8f5;
+  border-color: #6f9d91;
+  transform: translateY(-1px);
+}
+
+.audio-upload input {
+  display: none;
+}
+
+.upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 20px;
+}
+
+.upload-title {
+  color: #355f56;
+
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.upload-subtitle {
+  max-width: 500px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #7e8e89;
+
+  font-size: 13px;
+}
+
+.upload-formats {
+  margin-top: 3px;
+
+  color: #a0aca8;
+
+  font-size: 11px;
+  letter-spacing: 0.2px;
+}
+
+/* =========================================================
+   EMOTION INPUT OPTIONS
+   ========================================================= */
+
+.emotion-input-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+
+/* =========================================================
+   INPUT OPTION CARD
+   ========================================================= */
+
+.emotion-input-option {
+  min-height: 105px;
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  box-sizing: border-box;
+
+  border: 1.5px solid #dce8e3;
+  border-radius: 16px;
+
+  background: #fafcfb;
+
+  color: #294a42;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* Remove default button styling */
+
+button.emotion-input-option {
+  font-family: inherit;
+}
+
+
+/* Hover */
+
+.emotion-input-option:hover:not(:disabled) {
+  background: #f1f8f5;
+  border-color: #8eb3a8;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px rgba(49, 95, 86, 0.08);
+}
+
+
+/* Disabled */
+
+.emotion-input-option:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* =========================================================
+   INPUT OPTION ICON
+   ========================================================= */
+
+.input-option-icon {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #edf6f2;
+
+  border: 1px solid #dcebe5;
+
+  border-radius: 13px;
+
+  font-size: 22px;
+}
+
+
+/* =========================================================
+   INPUT OPTION TEXT
+   ========================================================= */
+
+.input-option-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.input-option-title {
+  color: #355f56;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+.input-option-subtitle {
+  color: #7e8e89;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   HIDE FILE INPUT
+   ========================================================= */
+
+.emotion-input-option input[type="file"] {
+  display: none;
+}
+
+
+/* =========================================================
+   RECORDING ACTIVE
+   ========================================================= */
+
+.emotion-input-option.recording-active {
+  background: #fff6f5;
+
+  border-color: #d88d84;
+}
+
+
+.emotion-input-option.recording-active .input-option-icon {
+  background: #fff0ee;
+
+  border-color: #efd0cb;
+}
+
+
+/* =========================================================
+   RECORDING STATUS
+   ========================================================= */
+
+.recording-status {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin-top: 18px;
+  padding: 15px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  background: #fff7f5;
+
+  border: 1px solid #efd7d3;
+
+  border-radius: 13px;
+
+  color: #9a5149;
+}
+
+
+.recording-status > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.recording-status strong {
+  font-size: 13px;
+}
+
+
+.recording-status span:not(.recording-dot) {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   RECORDING DOT
+   ========================================================= */
+
+.recording-dot {
+  width: 10px;
+  height: 10px;
+
+  display: inline-block;
+
+  background: #d95c52;
+
+  border-radius: 50%;
+
+  animation: recording-pulse 1.2s ease-in-out infinite;
+}
+
+
+@keyframes recording-pulse {
+
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: scale(0.75);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .emotion-input-options {
+    grid-template-columns: 1fr;
+  }
+
+  .emotion-input-option {
+    min-height: 90px;
+  }
+
+}
+
+/* =========================================================
+   SELECTED FILE
+   ========================================================= */
+
+.selected-file {
+  margin-top: 18px;
+
+  padding: 17px;
+
+  background: #f7faf8;
+
+  border: 1px solid #e6eeeb;
+  border-radius: 15px;
+
+  text-align: left;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.file-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eaf4f0;
+
+  border-radius: 11px;
+
+  font-size: 18px;
+}
+
+.file-details {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.file-name {
+  max-width: 600px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  color: #365c53;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.file-size {
+  color: #8a9894;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   AUDIO PLAYER
+   ========================================================= */
+
+.audio-player {
+  width: 100%;
+
+  margin-top: 15px;
+
+  height: 42px;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.emotion-error {
+  margin-top: 17px;
+
+  padding: 12px 15px;
+
+  background: #fff4f2;
+
+  border: 1px solid #efd5d1;
+  border-radius: 10px;
+
+  color: #a6534b;
+
+  font-size: 13px;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   ANALYZE BUTTON
+   ========================================================= */
+
+.analyze-button {
+  width: 100%;
+
+  margin-top: 23px;
+
+  padding: 14px 20px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #3f766b;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.analyze-button:hover:not(:disabled) {
+  background: #315f56;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 7px 18px rgba(49, 95, 86, 0.16);
+}
+
+.analyze-button:disabled {
+  opacity: 0.48;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading-spinner {
+  width: 14px;
+  height: 14px;
+
+  display: inline-block;
+
+  margin-right: 8px;
+
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  vertical-align: -2px;
+
+  animation: emotion-spin 0.7s linear infinite;
+}
+
+@keyframes emotion-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   RESULT CARD
+   ========================================================= */
+
+.emotion-result {
+  max-width: 900px;
+
+  margin: 30px auto 0;
+
+  padding: 32px 38px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e9e5;
+  border-radius: 22px;
+
+  box-shadow:
+    0 12px 35px rgba(40, 68, 62, 0.06);
+}
+
+
+/* =========================================================
+   RESULT HEADER
+   ========================================================= */
+
+.result-header {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding-bottom: 24px;
+
+  border-bottom: 1px solid #e9eeec;
+}
+
+.result-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #edf6f2;
+
+  border-radius: 13px;
+
+  font-size: 21px;
+}
+
+.result-label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #6a958b;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+}
+
+.result-header h2 {
+  margin: 0;
+
+  color: #294a42;
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.result-header p {
+  margin: 4px 0 0;
+
+  color: #82908c;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   EMOTION RESULT GRID
+   ========================================================= */
+
+.emotion-result-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+
+  margin-top: 25px;
+}
+
+.emotion-result-item {
+  min-height: 105px;
+
+  padding: 21px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: #f8faf9;
+
+  border: 1px solid #e8efec;
+  border-radius: 15px;
+}
+
+.result-item-label {
+  margin-bottom: 9px;
+
+  color: #7d8c87;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.emotion-state {
+  color: #315f56;
+
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.emotion-species {
+  color: #315f56;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.emotion-confidence {
+  color: #315f56;
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CONTINUE BUTTON
+   ========================================================= */
+
+.continue-button {
+  width: 100%;
+
+  margin-top: 23px;
+
+  padding: 13px 20px;
+
+  border: 1px solid #d5e3de;
+  border-radius: 11px;
+
+  background: #ffffff;
+  color: #3f7167;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.continue-button:hover {
+  background: #f1f7f4;
+
+  border-color: #bcd3cb;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .emotion-page {
+    padding: 28px 20px 45px;
+  }
+
+  .emotion-heading {
+    margin-top: 25px;
+  }
+
+  .emotion-heading h1 {
+    font-size: 31px;
+  }
+
+  .emotion-card {
+    padding: 35px 25px;
+  }
+
+  .emotion-result {
+    padding: 28px 22px;
+  }
+
+  .emotion-result-grid {
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .emotion-page {
+    padding: 22px 15px 40px;
+  }
+
+  .emotion-heading h1 {
+    font-size: 28px;
+  }
+
+  .emotion-heading p {
+    font-size: 14px;
+  }
+
+  .emotion-card {
+    padding: 30px 18px;
+
+    border-radius: 18px;
+  }
+
+  .emotion-result {
+    padding: 23px 17px;
+
+    border-radius: 18px;
+  }
+
+  .upload-formats {
+    line-height: 1.6;
+  }
+} 

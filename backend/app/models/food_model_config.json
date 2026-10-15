@@ -1,0 +1,26 @@
+{
+    "image_size": 224,
+    "classes": {
+        "0": "Apple",
+        "1": "Carrot",
+        "2": "Chicken",
+        "3": "Chocolate",
+        "4": "EGG",
+        "5": "Fish",
+        "6": "Fried Food",
+        "7": "Garlic",
+        "8": "Onion"
+    },
+    "toxicity": {
+        "Apple": "SAFE",
+        "Carrot": "SAFE",
+        "Chicken": "SAFE",
+        "EGG": "SAFE",
+        "Fish": "SAFE",
+        "Chocolate": "TOXIC",
+        "Fried Food": "TOXIC",
+        "Garlic": "TOXIC",
+        "Onion": "TOXIC"
+    },
+    "toxicity_threshold": 0.35
+}

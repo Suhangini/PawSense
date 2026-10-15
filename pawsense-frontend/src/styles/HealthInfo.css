@@ -1,0 +1,1082 @@
+/* ============================================================
+   PAWSENSE — HEALTH INFORMATION
+   Modern • Professional • Friendly
+   Desktop First
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #174e52;
+    --primary-light: #21666a;
+
+    --sage: #6f9688;
+    --sage-light: #edf4f1;
+
+    --background: #f5f7f4;
+    --surface: #ffffff;
+    --surface-soft: #f9fbfa;
+
+    --text: #243333;
+    --text-light: #65736f;
+    --muted: #929d99;
+
+    --border: #dce5e1;
+    --border-light: #e8eeeb;
+
+    --warning: #c58b3a;
+    --warning-bg: #faf4e8;
+    --warning-border: #e7d5b5;
+
+    --danger: #c85d5d;
+    --danger-bg: #fbefef;
+}
+
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+.healthinfo-page {
+    min-height: 100vh;
+
+    padding-bottom: 50px;
+
+    background:
+        radial-gradient(
+            circle at 8% 8%,
+            rgba(111, 150, 136, 0.08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 94% 20%,
+            rgba(23, 78, 82, 0.05),
+            transparent 25%
+        ),
+        var(--background);
+
+    color: var(--text);
+
+    font-family:
+        "Poppins",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.health-header {
+    height: 88px;
+
+    padding: 0 4%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border-light);
+
+    background: rgba(255, 255, 255, 0.96);
+
+    box-shadow:
+        0 2px 12px rgba(23, 78, 82, 0.03);
+}
+
+.health-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.health-logo {
+    width: 58px;
+    height: 58px;
+
+    padding: 5px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    object-fit: contain;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 5px 15px rgba(23, 78, 82, 0.08);
+}
+
+.health-brand-text h1 {
+    color: var(--primary);
+
+    font-size: 27px;
+
+    line-height: 1;
+
+    font-weight: 750;
+
+    letter-spacing: -0.5px;
+}
+
+.health-brand-text h1 span {
+    color: var(--sage);
+}
+
+.health-brand-text p {
+    margin-top: 6px;
+
+    color: var(--text-light);
+
+    font-size: 10px;
+
+    font-weight: 500;
+}
+
+.health-brand-text p span {
+    color: var(--sage);
+}
+
+
+/* ============================================================
+   WELCOME PARENT CARD
+   ============================================================ */
+
+.welcome-parent-card {
+    min-width: 230px;
+
+    padding: 9px 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: var(--surface-soft);
+}
+
+.welcome-paw {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--sage-light);
+
+    font-size: 17px;
+}
+
+.welcome-parent-card strong {
+    display: block;
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 650;
+}
+
+.welcome-parent-card span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+}
+
+
+/* ============================================================
+   MAIN
+   ============================================================ */
+
+.health-main {
+    width: min(1180px, 92%);
+
+    margin: 0 auto;
+
+    padding-top: 25px;
+
+    position: relative;
+}
+
+
+/* ============================================================
+   BACK BUTTON
+   ============================================================ */
+
+.health-back-btn {
+    width: fit-content;
+    height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 0 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: var(--primary);
+
+    font-family: inherit;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.health-back-btn:hover {
+    background: var(--sage-light);
+
+    border-color: #b8cbc4;
+
+    transform: translateX(-2px);
+}
+
+.health-back-btn span {
+    font-size: 17px;
+
+    line-height: 1;
+}
+
+
+/* ============================================================
+   PROGRESS
+   ============================================================ */
+
+.health-progress {
+    width: 440px;
+
+    max-width: 90%;
+
+    margin: -3px auto 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        70px
+        1fr
+        70px
+        1fr;
+
+    align-items: start;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #8d9894;
+
+    font-size: 10px;
+
+    transition: color 0.2s ease;
+}
+
+.progress-step.active,
+.progress-step.completed {
+    color: var(--primary);
+
+    font-weight: 650;
+}
+
+.progress-circle {
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dce2df;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.progress-step.completed .progress-circle,
+.progress-step.active .progress-circle {
+    background: var(--primary);
+
+    box-shadow:
+        0 4px 12px rgba(23, 78, 82, 0.18);
+}
+
+.progress-line {
+    height: 1px;
+
+    margin-top: 13px;
+
+    background: #dce2df;
+}
+
+.progress-line.active {
+    background:
+        repeating-linear-gradient(
+            90deg,
+            var(--sage) 0,
+            var(--sage) 4px,
+            transparent 4px,
+            transparent 7px
+        );
+}
+
+
+/* ============================================================
+   TITLE
+   ============================================================ */
+
+.health-title {
+    text-align: center;
+
+    margin-bottom: 24px;
+}
+
+.health-title h2 {
+    color: var(--primary);
+
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    letter-spacing: -0.4px;
+}
+
+.health-title h2 span {
+    color: var(--sage);
+}
+
+.health-title h2 b {
+    color: var(--sage);
+
+    font-size: 24px;
+}
+
+.health-title p {
+    max-width: 540px;
+
+    margin: 9px auto 0;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* ============================================================
+   MAIN CARD
+   ============================================================ */
+
+.health-card {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        310px;
+
+    gap: 30px;
+
+    padding: 28px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 14px 35px rgba(23, 78, 82, 0.07);
+
+    align-items: start;
+}
+
+.health-form {
+    width: 100%;
+
+    min-width: 0;
+}
+
+.health-info-panel {
+    width: 100%;
+
+    min-width: 0;
+}
+
+
+/* ============================================================
+   FORM
+   ============================================================ */
+
+.health-section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 14px;
+
+    padding: 7px 11px;
+
+    border-radius: 8px;
+
+    background: var(--sage-light);
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    border: 1px solid #dceae5;
+}
+
+.section-title span {
+    color: var(--sage);
+
+    font-size: 14px;
+}
+
+
+/* ============================================================
+   GRIDS
+   ============================================================ */
+
+.three-column-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 16px;
+}
+
+.two-column-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-bottom: 16px;
+}
+
+
+/* ============================================================
+   FIELDS
+   ============================================================ */
+
+.health-field {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.health-field label {
+    color: var(--text);
+
+    font-size: 10px;
+
+    font-weight: 650;
+}
+
+.health-field input,
+.health-field select,
+.health-field textarea {
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: #fbfcfb;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.health-field input,
+.health-field select {
+    height: 40px;
+
+    padding: 0 11px;
+}
+
+.health-field textarea {
+    height: 74px;
+
+    padding: 10px;
+
+    resize: vertical;
+}
+
+.health-field input::placeholder,
+.health-field textarea::placeholder {
+    color: #a1aaa7;
+}
+
+.health-field input:hover,
+.health-field select:hover,
+.health-field textarea:hover {
+    border-color: #b8cbc4;
+}
+
+.health-field input:focus,
+.health-field select:focus,
+.health-field textarea:focus {
+    background: #ffffff;
+
+    border-color: var(--sage);
+
+    box-shadow:
+        0 0 0 3px rgba(111, 150, 136, 0.11);
+}
+
+
+/* ============================================================
+   DATE
+   ============================================================ */
+
+.date-input {
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: #fbfcfb;
+
+    overflow: hidden;
+}
+
+.date-input span {
+    padding-left: 11px;
+
+    color: var(--sage);
+
+    font-size: 12px;
+}
+
+.date-input input {
+    height: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    box-shadow: none;
+
+    padding-left: 7px;
+}
+
+.date-input input:focus {
+    box-shadow: none;
+}
+
+
+/* ============================================================
+   SECURITY
+   ============================================================ */
+
+.security-strip {
+    min-height: 56px;
+
+    padding: 10px 13px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    border-radius: 9px;
+
+    background: var(--warning-bg);
+
+    border: 1px solid var(--warning-border);
+}
+
+.security-icon {
+    font-size: 22px;
+}
+
+.security-strip strong {
+    display: block;
+
+    color: #654b2f;
+
+    font-size: 10px;
+}
+
+.security-strip p {
+    margin-top: 3px;
+
+    color: #8b7966;
+
+    font-size: 8px;
+}
+
+.lock-icon {
+    margin-left: auto;
+
+    color: #9a7a4b;
+
+    font-size: 20px;
+}
+
+
+/* ============================================================
+   ACTIONS
+   ============================================================ */
+
+.health-actions {
+    display: flex;
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-top: 20px;
+}
+
+.health-cancel-btn,
+.health-save-btn {
+    height: 44px;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.health-cancel-btn {
+    width: 145px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 1px solid var(--border);
+
+    background: #ffffff;
+
+    color: var(--text-light);
+}
+
+.health-cancel-btn:hover {
+    background: var(--surface-soft);
+
+    border-color: #b8cbc4;
+}
+
+.health-save-btn {
+    width: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border: none;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 17px rgba(23, 78, 82, 0.16);
+}
+
+.health-save-btn:hover {
+    background: var(--primary-light);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(23, 78, 82, 0.21);
+}
+
+.health-save-btn span {
+    font-size: 16px;
+}
+
+
+/* ============================================================
+   RIGHT INFO PANEL
+   ============================================================ */
+
+.health-info-panel {
+    padding: 20px;
+
+    border: 1px solid #dce8e3;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f7faf8,
+            #f1f6f3
+        );
+}
+
+.health-info-panel h3 {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.health-info-panel h3 span {
+    width: 29px;
+    height: 29px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--sage-light);
+
+    color: var(--primary);
+
+    font-size: 13px;
+}
+
+.info-intro {
+    margin: 12px 0 18px;
+
+    color: var(--text-light);
+
+    font-size: 9px;
+
+    line-height: 1.65;
+}
+
+
+/* ============================================================
+   INFO ITEMS
+   ============================================================ */
+
+.info-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-bottom: 17px;
+}
+
+.info-icon {
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #e6f0ec;
+
+    color: var(--primary);
+
+    font-size: 14px;
+}
+
+.info-item strong {
+    display: block;
+
+    color: var(--text);
+
+    font-size: 10px;
+
+    font-weight: 650;
+}
+
+.info-item p {
+    margin-top: 4px;
+
+    color: var(--text-light);
+
+    font-size: 8.5px;
+
+    line-height: 1.5;
+}
+
+
+/* ============================================================
+   ILLUSTRATION AREA
+   ============================================================ */
+
+.health-illustration {
+    height: 170px;
+
+    margin-top: 8px;
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background:
+        radial-gradient(
+            circle at 50% 75%,
+            rgba(111, 150, 136, 0.20),
+            transparent 62%
+        );
+}
+
+.illustration-pet,
+.illustration-cat {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 76px;
+}
+
+.illustration-pet {
+    transform: translateX(20px);
+}
+
+.illustration-cat {
+    transform: translateX(-15px) scale(0.82);
+}
+
+.heart-one,
+.heart-two {
+    position: absolute;
+
+    color: var(--sage);
+
+    font-size: 15px;
+}
+
+.heart-one {
+    left: 38px;
+    top: 55px;
+}
+
+.heart-two {
+    right: 42px;
+    top: 42px;
+}
+
+
+/* ============================================================
+   DESKTOP
+   ============================================================ */
+
+@media (min-width: 1200px) {
+
+    .health-main {
+        width: min(1200px, 92%);
+    }
+
+    .health-card {
+        padding: 30px;
+    }
+
+    .health-info-panel {
+        padding: 22px;
+    }
+}
+
+
+/* ============================================================
+   LAPTOP
+   ============================================================ */
+
+@media (max-width: 1199px) and (min-width: 901px) {
+
+    .health-card {
+        grid-template-columns:
+            minmax(0, 1fr)
+            280px;
+
+        gap: 24px;
+    }
+}
+
+
+/* ============================================================
+   TEMPORARY RESPONSIVE FALLBACK
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .health-card {
+        grid-template-columns: 1fr;
+    }
+
+    .health-info-panel {
+        display: block;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .health-header {
+        height: 78px;
+
+        padding: 0 16px;
+    }
+
+    .health-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .health-brand-text h1 {
+        font-size: 23px;
+    }
+
+    .health-brand-text p {
+        display: none;
+    }
+
+    .welcome-parent-card {
+        min-width: auto;
+
+        padding: 7px;
+    }
+
+    .welcome-parent-card > div:last-child {
+        display: none;
+    }
+
+    .health-main {
+        width: 94%;
+    }
+
+    .health-title h2 {
+        font-size: 26px;
+    }
+
+    .health-card {
+        padding: 20px;
+    }
+
+    .three-column-grid,
+    .two-column-grid {
+        grid-template-columns: 1fr;
+
+        gap: 13px;
+    }
+
+    .health-actions {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+    .health-cancel-btn,
+    .health-save-btn {
+        width: 100%;
+    }
+}

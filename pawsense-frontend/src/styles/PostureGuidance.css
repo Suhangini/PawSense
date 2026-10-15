@@ -1,0 +1,773 @@
+
+/* =========================================
+   PawSense AI — Posture Guidance
+   Refined, responsive pet-care UI
+========================================= */
+
+.posture-page {
+  --posture-ink: #173f46;
+  --posture-ink-soft: #28565c;
+  --posture-muted: #71838a;
+  --posture-green: #4d9b80;
+  --posture-border: #e1ece8;
+  --posture-surface: #ffffff;
+  --posture-background: #f5f9f7;
+  --posture-soft-green: #edf6f1;
+  --posture-shadow: 0 5px 22px rgba(23, 63, 70, 0.035);
+
+  width: 100%;
+  min-height: 100vh;
+  padding: clamp(16px, 2.2vw, 34px);
+  color: var(--posture-ink);
+  background: var(--posture-background);
+  font-family: inherit;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.posture-page *,
+.posture-page *::before,
+.posture-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   Page Header
+========================================= */
+
+.posture-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 26px;
+}
+
+.posture-eyebrow {
+  display: inline-block;
+  color: var(--posture-green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+}
+
+.posture-page-header h1 {
+  margin: 9px 0 10px;
+  font-size: clamp(29px, 3vw, 42px);
+  font-weight: 750;
+  letter-spacing: -1.2px;
+  line-height: 1.13;
+  color: var(--posture-ink);
+}
+
+.posture-subtitle {
+  max-width: 740px;
+  margin: 0;
+  color: var(--posture-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Back to Dashboard button */
+
+.posture-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin: 0 0 16px;
+  padding: 0;
+  border: 1px solid #dce9e4;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #173f46;
+  font-size: 23px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.posture-back-button:hover {
+  background: #eaf5ef;
+  transform: translateX(-2px);
+}
+
+.posture-back-button:focus-visible {
+  outline: 3px solid #75bca3;
+  outline-offset: 3px;
+}
+
+
+/* =========================================
+   Intro Note
+========================================= */
+
+.posture-intro-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 360px;
+  max-width: 100%;
+  flex-shrink: 0;
+  padding: 19px;
+  border: 1px solid var(--posture-border);
+  border-radius: 19px;
+  background: linear-gradient(135deg, #f0f8f4, #eaf4ef);
+}
+
+.posture-note-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  font-size: 21px;
+}
+
+.posture-intro-note h3 {
+  margin: 2px 0 7px;
+  font-size: 13px;
+  font-weight: 750;
+  color: var(--posture-ink);
+}
+
+.posture-intro-note p {
+  margin: 0;
+  color: var(--posture-muted);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+/* =========================================
+   Main Sections
+========================================= */
+
+.posture-section {
+  margin-bottom: 19px;
+  padding: clamp(15px, 1.4vw, 22px);
+  border: 1px solid var(--posture-border);
+  border-radius: 21px;
+  background: var(--posture-surface);
+  box-shadow: var(--posture-shadow);
+  transition: box-shadow 0.25s ease;
+}
+
+.posture-section:hover {
+  box-shadow: 0 8px 28px rgba(23, 63, 70, 0.045);
+}
+
+.posture-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 19px;
+}
+
+/* FIX: Icon and text stay aligned to the left */
+
+.posture-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 13px;
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.posture-section-heading > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  gap: 4px;
+  text-align: left;
+}
+
+.posture-section-heading h2 {
+  width: 100%;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 750;
+  letter-spacing: -0.3px;
+  line-height: 1.35;
+  color: var(--posture-ink);
+  text-align: left;
+}
+
+.posture-section-heading p {
+  width: 100%;
+  margin: 0;
+  color: var(--posture-muted);
+  font-size: 12.5px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Normal posture icon */
+
+.posture-section-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  border-radius: 14px;
+  background: #e3f4e9;
+  font-size: 23px;
+}
+
+/* Abnormal posture warning icon */
+
+.posture-warning-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  border-radius: 14px;
+  background: #fff2e9;
+  font-size: 23px;
+}
+
+/* Health tips heading */
+
+.posture-tips-title h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 750;
+  color: var(--posture-ink);
+}
+
+/* =========================================
+   Dog / Cat Selector
+========================================= */
+
+.species-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: fit-content;
+  padding: 3px;
+  flex-shrink: 0;
+  border: 1px solid #edf2ef;
+  border-radius: 10px;
+  background: #f2f7f4;
+}
+
+.species-toggle button {
+  min-width: 68px;
+  padding: 8px 11px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #75858a;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.species-toggle button:hover:not(.active) {
+  color: var(--posture-ink);
+  background: #e6f0eb;
+}
+
+.species-toggle button.active {
+  color: #ffffff;
+  background: #194750;
+  box-shadow: 0 2px 5px rgba(23, 63, 70, 0.12);
+}
+
+.species-toggle button:focus-visible {
+  outline: 2px solid #75bca3;
+  outline-offset: 2px;
+}
+
+/* =========================================
+   Posture Grids
+========================================= */
+
+.posture-grid {
+  display: grid;
+  gap: 13px;
+  align-items: stretch;
+}
+
+.posture-grid-normal {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.posture-grid-abnormal {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+/* =========================================
+   Posture Cards
+========================================= */
+
+.posture-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e0ece7;
+  border-radius: 17px;
+  background: #f8fbf9;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.posture-card:hover {
+  transform: translateY(-4px);
+  border-color: #c8e1d6;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(23, 63, 70, 0.075);
+}
+
+/* Image */
+
+.posture-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(125px, 12vw, 165px);
+  margin: 9px 9px 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #eff5f1;
+}
+
+.posture-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.posture-card:hover .posture-image {
+  transform: scale(1.035);
+}
+
+/* Card Text */
+
+.posture-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 13px 15px;
+}
+
+.posture-label {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  margin-bottom: 8px;
+  padding: 5px 9px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.posture-label-normal {
+  color: #226b59;
+  background: #d9f2e9;
+}
+
+.posture-label-abnormal {
+  color: #b52e27;
+  background: #ffe7e3;
+}
+
+.posture-card-content p {
+  margin: 0;
+  color: var(--posture-muted);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+/* =========================================
+   Health Tips
+========================================= */
+
+.posture-tips {
+  padding: 21px;
+  border: 1px solid #d2e9df;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f0f8f4, #f6faf7);
+}
+
+.posture-tips-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 17px;
+}
+
+.posture-tips-title > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: #e0f1e9;
+  font-size: 23px;
+}
+
+.posture-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+}
+
+.posture-tip {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  padding: 9px 13px;
+  border-right: 1px solid #dcece5;
+}
+
+.posture-tip:first-child {
+  padding-left: 0;
+}
+
+.posture-tip:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+.posture-tip > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  border: 1px solid #e0eee7;
+  border-radius: 12px;
+  background: #e4f2eb;
+  font-size: 17px;
+  transition: transform 0.2s ease;
+}
+
+.posture-tip:hover > span {
+  transform: translateY(-2px);
+}
+
+.posture-tip p {
+  margin: 0;
+  color: var(--posture-muted);
+  font-size: 11.5px;
+  line-height: 1.7;
+}
+
+.posture-disclaimer {
+  margin: 17px 0 0;
+  padding-top: 13px;
+  border-top: 1px solid #dcece5;
+  color: #7a8d90;
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+/* =========================================
+   Medium Screens
+========================================= */
+
+@media (max-width: 1150px) {
+  .posture-page-header {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 17px;
+  }
+
+  .posture-intro-note {
+    width: 100%;
+  }
+
+  .posture-grid-normal {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .posture-grid-abnormal {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .posture-tips-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .posture-tip,
+  .posture-tip:first-child,
+  .posture-tip:last-child {
+    padding: 12px;
+    border-right: 0;
+    border-bottom: 1px solid #dcece5;
+  }
+
+  .posture-tip:last-child {
+    border-bottom: 0;
+  }
+}
+
+/* =========================================
+   Mobile
+========================================= */
+
+@media (max-width: 650px) {
+  .posture-page {
+    padding: 30px;
+  }
+
+  .posture-page-header {
+    margin-bottom: 18px;
+  }
+
+  .posture-page-header h1 {
+    font-size: 30px;
+    letter-spacing: -0.7px;
+  }
+
+  .posture-subtitle {
+    font-size: 13px;
+  }
+
+  .posture-intro-note {
+    padding: 14px;
+    border-radius: 15px;
+  }
+
+  .posture-section {
+    margin-bottom: 14px;
+    padding: 13px;
+    border-radius: 16px;
+  }
+
+  .posture-section-header {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .posture-section-heading {
+    align-items: center;
+    gap: 10px;
+  }
+
+  .posture-section-heading h2 {
+    font-size: 16px;
+  }
+
+  .posture-section-heading p {
+    font-size: 12px;
+  }
+
+  .posture-section-icon,
+  .posture-warning-icon {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+    border-radius: 11px;
+    font-size: 21px;
+  }
+
+  
+
+  .posture-grid-normal,
+  .posture-grid-abnormal {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .posture-image-wrap {
+    height: 115px;
+    margin: 6px 6px 0;
+    border-radius: 9px;
+  }
+
+  .posture-card {
+    border-radius: 13px;
+  }
+
+  .posture-card-content {
+    padding: 9px;
+  }
+
+  .posture-label {
+    margin-bottom: 6px;
+    padding: 5px 7px;
+    font-size: 10px;
+  }
+
+  .posture-card-content p {
+    font-size: 11.5px;
+    line-height: 1.65;
+  }
+
+  .posture-tips {
+    padding: 14px;
+    border-radius: 16px;
+  }
+
+  .posture-tips-title {
+    gap: 9px;
+    margin-bottom: 11px;
+  }
+
+  .posture-tips-title > span {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+
+  .posture-tips-title h2 {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .posture-tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .posture-tip,
+  .posture-tip:first-child,
+  .posture-tip:last-child {
+    padding: 11px 0;
+    border-right: 0;
+    border-bottom: 1px solid #dcece5;
+  }
+
+  .posture-tip:last-child {
+    border-bottom: 0;
+  }
+
+  .posture-tip p {
+    font-size: 12px;
+  }
+
+  .posture-disclaimer {
+    margin-top: 12px;
+    padding-top: 11px;
+    font-size: 10.5px;
+  }
+}
+
+/* =========================================
+   Reduced Motion Accessibility
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .posture-page *,
+  .posture-page *::before,
+  .posture-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+
+/* Dog/Cat selector — contained within the page width */
+.posture-species-picker {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0 0 16px;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.posture-species-picker .species-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+  flex-shrink: 1;
+  border: 1px solid #e1ece8;
+  border-radius: 11px;
+  background: #f0f6f3;
+}
+
+.posture-species-picker .species-toggle button {
+  flex: 0 1 auto;
+  min-width: 68px;
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.posture-species-picker .species-toggle button.active {
+  color: #fff;
+  background: #194750;
+  box-shadow: 0 2px 5px rgba(23, 63, 70, 0.12);
+}
+
+@media (max-width: 650px) {
+  .posture-species-picker {
+    margin-bottom: 12px;
+  }
+
+  .posture-species-picker .species-toggle button {
+    min-width: 60px;
+    padding: 8px 9px;
+  }
+}
+
+
+.posture-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+.posture-page-header,
+.posture-section,
+.posture-species-picker,
+.posture-tips {
+  max-width: 100%;
+  min-width: 0;
+}

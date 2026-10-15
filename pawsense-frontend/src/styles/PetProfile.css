@@ -1,0 +1,969 @@
+/* ============================================================
+   PAWSENSE PET PROFILE
+   Modern • Professional • Friendly
+   Desktop First
+
+   NOTE ON SCOPING:
+   The original file used a bare "*" reset, a bare ":root"
+   token block, and a bare "body" rule. Because this stylesheet
+   stays loaded in the SPA bundle after navigating away from
+   this page, those bare selectors could leak into Dashboard
+   (and any other route) and silently override styles there.
+   Everything is now scoped under ".petprofile-container" to
+   match the scoping approach used in dashboard.css.
+   ============================================================ */
+
+.petprofile-container,
+.petprofile-container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.petprofile-container {
+    --primary: #174e52;
+    --primary-light: #21666a;
+    --sage: #6f9688;
+    --sage-light: #edf4f1;
+
+    --background: #f5f7f4;
+    --surface: #ffffff;
+    --surface-soft: #f9fbfa;
+
+    --text: #243333;
+    --text-light: #65736f;
+    --muted: #929d99;
+
+    --border: #dce5e1;
+    --border-light: #e8eeeb;
+
+    --warning: #c58b3a;
+    --warning-bg: #faf4e8;
+
+    --danger: #c85d5d;
+    --danger-bg: #fbefef;
+
+    --shadow:
+        0 18px 45px rgba(23, 78, 82, 0.08);
+}
+
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+.petprofile-container {
+    min-height: 100vh;
+    width: 100%;
+
+    padding: 28px 45px 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family:
+        "Poppins",
+        "Segoe UI",
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 8% 8%,
+            rgba(111, 150, 136, 0.08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 95% 15%,
+            rgba(23, 78, 82, 0.05),
+            transparent 25%
+        ),
+        var(--background);
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.petprofile-container .pet-header {
+    width: 100%;
+    max-width: 1180px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 4px 0 18px;
+}
+
+.petprofile-container .header-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+.petprofile-container .header-logo .logo {
+    width: 62px;
+    height: 62px;
+
+    padding: 5px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    box-shadow:
+        0 6px 18px rgba(23, 78, 82, 0.08);
+}
+
+.petprofile-container .header-brand-text h1 {
+    font-size: 27px;
+    line-height: 1.1;
+
+    font-weight: 750;
+
+    letter-spacing: -0.5px;
+
+    color: var(--primary);
+}
+
+.petprofile-container .header-brand-text h1 span {
+    color: var(--sage);
+}
+
+.petprofile-container .header-brand-text p {
+    margin-top: 5px;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+
+/* ============================================================
+   PROFILE NAVIGATION
+   ============================================================ */
+
+.petprofile-container .profile-navigation {
+    width: 100%;
+    max-width: 1180px;
+
+    display: flex;
+    justify-content: flex-start;
+
+    margin: 4px 0 25px;
+
+    border-bottom: 1px solid var(--border-light);
+}
+
+.petprofile-container .profile-nav-item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 10px 18px 12px;
+
+    color: #74817d;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+.petprofile-container .profile-nav-item:hover {
+    color: var(--primary);
+}
+
+.petprofile-container .profile-nav-item.active {
+    color: var(--primary);
+}
+
+.petprofile-container .profile-nav-item.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 15px;
+    right: 15px;
+
+    bottom: -1px;
+
+    height: 2px;
+
+    border-radius: 4px;
+
+    background: var(--primary);
+}
+
+.petprofile-container .profile-nav-item span {
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   MAIN CARD
+   ============================================================ */
+
+.petprofile-container .petprofile-card {
+    width: 100%;
+    max-width: 1180px;
+
+    padding: 40px 45px 38px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.petprofile-container .hero-section {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        370px;
+
+    align-items: center;
+
+    gap: 55px;
+
+    padding-bottom: 35px;
+
+    border-bottom: 1px solid var(--border-light);
+}
+
+.petprofile-container .hero-content {
+    text-align: left;
+
+    max-width: 590px;
+}
+
+.petprofile-container .hero-tag {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 12px;
+
+    margin-bottom: 17px;
+
+    border-radius: 8px;
+
+    background: var(--sage-light);
+
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 650;
+
+    border: 1px solid #dbe9e4;
+}
+
+.petprofile-container .hero-content h2 {
+    color: var(--primary);
+
+    font-size: 32px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 13px;
+}
+
+.petprofile-container .heading-paw {
+    margin-left: 7px;
+
+    color: var(--sage);
+
+    font-size: 25px;
+}
+
+.petprofile-container .hero-content p {
+    max-width: 540px;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+
+    line-height: 1.75;
+}
+
+
+/* ============================================================
+   PET IMAGE UPLOAD
+   ============================================================ */
+
+.petprofile-container .pet-image-upload {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 100%;
+}
+
+.petprofile-container .pet-image-box {
+    width: 100%;
+    height: 245px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1.5px dashed #a9c0b8;
+
+    border-radius: 14px;
+
+    background: var(--surface-soft);
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.petprofile-container .pet-image-box:hover {
+    border-color: var(--sage);
+
+    background: #f3f8f6;
+
+    transform: translateY(-1px);
+}
+
+.petprofile-container .pet-image-box.has-image {
+    padding: 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    background: #fafcfb;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    height: auto;
+
+    min-height: 245px;
+
+    overflow: hidden;
+}
+
+.petprofile-container .camera-circle {
+    width: 66px;
+    height: 66px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 12px;
+
+    border-radius: 50%;
+
+    background: var(--sage-light);
+
+    color: var(--primary);
+
+    font-size: 29px;
+
+    border: 1px solid #d7e7e1;
+}
+
+.petprofile-container .upload-text {
+    color: var(--primary);
+
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.petprofile-container .upload-subtext {
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 10.5px;
+}
+
+.petprofile-container .pet-preview {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+    max-height: 320px;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 10px;
+}
+
+.petprofile-container .change-photo {
+    margin-top: 8px;
+
+    color: var(--sage);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.petprofile-container .change-photo:hover {
+    color: var(--primary);
+
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   FORM
+   ============================================================ */
+
+.petprofile-container .pet-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+
+    padding-top: 32px;
+}
+
+.petprofile-container .form-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px 32px;
+}
+
+.petprofile-container .input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.petprofile-container .input-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.petprofile-container .input-group label {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: var(--text);
+
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.petprofile-container .input-group label span {
+    color: var(--sage);
+
+    font-size: 13px;
+}
+
+.petprofile-container .input-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dce5e1;
+    border-radius: 10px;
+    background-color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--text);
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.petprofile-container .input-group select {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    padding: 12px 44px 12px 15px;
+    border: 1.5px solid #d5e2dc;
+    border-radius: 13px;
+    background-color: #fbfdfb;
+    color: #294b45;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2321666a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 10 5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+    box-shadow: 0 3px 10px rgba(23, 78, 82, 0.035);
+    transition: border-color 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease, transform 0.22s ease;
+}
+
+.petprofile-container .input-group input::placeholder {
+    color: #a1aaa7;
+}
+
+.petprofile-container .input-group input:hover {
+    border-color: #b8cbc4;
+}
+
+.petprofile-container .input-group select:hover {
+    border-color: #9dbbb0;
+    background-color: #f5faf7;
+}
+
+.petprofile-container .input-group input:focus {
+    background: #ffffff;
+    border-color: var(--sage);
+    box-shadow: 0 0 0 3px rgba(111, 150, 136, 0.12);
+}
+
+.petprofile-container .input-group select:focus {
+    background-color: #ffffff;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 4px rgba(111, 150, 136, 0.18);
+}
+
+.petprofile-container .input-group select option {
+    color: var(--text);
+    background-color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.petprofile-container .input-group select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* ============================================================
+   ERRORS
+   ============================================================ */
+
+.petprofile-container .field-error {
+    margin-top: -2px;
+
+    color: var(--danger);
+
+    font-size: 10.5px;
+    font-weight: 500;
+}
+
+
+/* ============================================================
+   GENDER
+   ============================================================ */
+
+.petprofile-container .gender-selector {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+.petprofile-container .gender-card {
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: #fbfcfb;
+
+    color: #6d7975;
+
+    font-size: 12px;
+    font-weight: 550;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.petprofile-container .gender-card:hover {
+    border-color: #b8cbc4;
+}
+
+.petprofile-container .gender-card input {
+    display: none;
+}
+
+.petprofile-container .gender-card.active {
+    border-color: var(--sage);
+
+    background: var(--sage-light);
+
+    color: var(--primary);
+
+    font-weight: 650;
+}
+
+.petprofile-container .gender-icon {
+    font-size: 16px;
+}
+
+
+/* ============================================================
+   BREED DETECTION
+   ============================================================ */
+
+.petprofile-container .breed-card {
+    width: 100%;
+
+    min-height: 96px;
+
+    padding: 18px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    border: 1px solid #e4dccb;
+
+    border-radius: 13px;
+
+    background: var(--warning-bg);
+}
+
+.petprofile-container .breed-card p {
+    color: #594c3b;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+.petprofile-container .breed-card span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #827563;
+
+    font-size: 11px;
+
+    font-weight: 400;
+}
+
+.petprofile-container .breed-card-btn {
+    padding: 11px 18px;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    border: 1px solid #cda96a;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #9a6e2f;
+
+    font-family: inherit;
+
+    font-size: 11px;
+    font-weight: 650;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.petprofile-container .breed-card-btn:hover {
+    background: #9a6e2f;
+
+    border-color: #9a6e2f;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   CONTINUE
+   ============================================================ */
+
+.petprofile-container .button-group {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 4px;
+}
+
+.petprofile-container .continue-btn {
+    width: 400px;
+    max-width: 100%;
+
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 650;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px rgba(23, 78, 82, 0.16);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.petprofile-container .continue-btn:hover {
+    background: var(--primary-light);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 24px rgba(23, 78, 82, 0.20);
+}
+
+.petprofile-container .continue-btn:active {
+    transform: translateY(0);
+}
+
+.petprofile-container .continue-btn span:first-child {
+    font-size: 15px;
+}
+
+.petprofile-container .continue-arrow {
+    font-size: 18px;
+}
+
+.petprofile-container .continue-note {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    text-align: center;
+}
+
+
+/* ============================================================
+   DESKTOP
+   ============================================================ */
+
+@media (min-width: 1200px) {
+
+    .petprofile-container {
+        padding-left: 55px;
+        padding-right: 55px;
+    }
+
+    .petprofile-container .petprofile-card {
+        max-width: 1200px;
+
+        padding: 42px 50px 38px;
+    }
+
+    .petprofile-container .hero-section {
+        grid-template-columns:
+            minmax(0, 1fr)
+            390px;
+
+        gap: 65px;
+    }
+}
+
+
+/* ============================================================
+   LAPTOP
+   ============================================================ */
+
+@media (max-width: 1199px) and (min-width: 901px) {
+
+    .petprofile-container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .petprofile-container .petprofile-card {
+        padding: 38px 38px 35px;
+    }
+
+    .petprofile-container .hero-section {
+        grid-template-columns:
+            minmax(0, 1fr)
+            340px;
+
+        gap: 40px;
+    }
+}
+
+
+/* ============================================================
+   TEMPORARY MOBILE FALLBACK
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .petprofile-container {
+        padding: 20px 18px 40px;
+    }
+
+    .petprofile-container .petprofile-card {
+        padding: 30px 25px;
+    }
+
+    .petprofile-container .hero-section {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .petprofile-container .hero-content {
+        max-width: none;
+    }
+
+    .petprofile-container .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .petprofile-container .input-group.full-width {
+        grid-column: auto;
+    }
+
+    .petprofile-container .pet-image-upload {
+        order: -1;
+    }
+
+    .petprofile-container .breed-card {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        text-align: center;
+    }
+
+    .petprofile-container .breed-card-btn {
+        width: 100%;
+
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .petprofile-container {
+        padding: 15px 12px 30px;
+    }
+
+    .petprofile-container .petprofile-card {
+        padding: 25px 18px;
+    }
+
+    .petprofile-container .header-logo .logo {
+        width: 52px;
+        height: 52px;
+    }
+
+    .petprofile-container .header-brand-text h1 {
+        font-size: 23px;
+    }
+
+    .petprofile-container .header-brand-text p {
+        font-size: 9px;
+    }
+
+    .petprofile-container .profile-navigation {
+        overflow-x: auto;
+    }
+
+    .petprofile-container .hero-content h2 {
+        font-size: 27px;
+    }
+
+    .petprofile-container .continue-btn {
+        width: 100%;
+    }
+}

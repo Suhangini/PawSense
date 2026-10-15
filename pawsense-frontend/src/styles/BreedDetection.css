@@ -1,0 +1,1757 @@
+/* ============================================================
+   PAWSENSE — BREED DETECTION
+   Professional + Friendly Pet-Care UI
+   Teal + Sage + Off-White Theme
+   ============================================================ */
+
+:root {
+    --paw-primary: #174e52;
+    --paw-primary-light: #21666a;
+    --paw-primary-soft: #e8f2f0;
+
+    --paw-sage: #6f9688;
+    --paw-sage-dark: #5f8275;
+    --paw-sage-light: #edf4f1;
+
+    --paw-background: #f5f7f4;
+    --paw-surface: #ffffff;
+    --paw-surface-soft: #f9fbfa;
+
+    --paw-text: #243333;
+    --paw-text-light: #65736f;
+    --paw-muted: #929d99;
+
+    --paw-border: #dce5e1;
+    --paw-border-dark: #cbd8d3;
+
+    --paw-warning: #c58b3a;
+    --paw-warning-bg: #faf4e8;
+    --paw-warning-border: #e7d5b5;
+
+    --paw-danger: #c85d5d;
+    --paw-danger-bg: #fbefef;
+
+    --paw-success: #4f8b68;
+    --paw-success-bg: #edf6f0;
+
+    --paw-shadow:
+        0 8px 28px rgba(30, 62, 58, 0.07);
+}
+
+
+/* ============================================================
+   GLOBAL PAGE
+   ============================================================ */
+
+.breed-page {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(111, 150, 136, 0.08),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 92% 30%,
+            rgba(23, 78, 82, 0.05),
+            transparent 23%
+        ),
+        var(--paw-background);
+
+    color: var(--paw-text);
+
+    font-family:
+        Poppins,
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    padding-bottom: 90px;
+}
+
+
+/* ============================================================
+   HEADER / NAVBAR
+   ============================================================ */
+
+.breed-navbar {
+    height: 88px;
+
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid var(--paw-border);
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* ============================================================
+   BRAND
+   ============================================================ */
+
+.breed-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.breed-logo-wrapper {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--paw-surface);
+
+    border: 1px solid var(--paw-border);
+
+    box-shadow:
+        0 4px 14px rgba(23, 78, 82, 0.08);
+
+    overflow: hidden;
+}
+
+
+.breed-logo {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+}
+
+
+.breed-brand-text h1 {
+    margin: 0;
+
+    color: var(--paw-primary);
+
+    font-size: 27px;
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -0.7px;
+}
+
+
+.breed-brand-text p {
+    margin: 5px 0 0;
+
+    color: var(--paw-text-light);
+
+    font-size: 11px;
+
+    line-height: 1.2;
+}
+
+
+/* ============================================================
+   PRIORITY / AI STATUS BADGE
+   ============================================================ */
+
+.priority-badge {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    border: 1px solid var(--paw-border);
+
+    border-radius: 10px;
+
+    background: var(--paw-surface-soft);
+
+    color: var(--paw-text-light);
+
+    font-size: 11px;
+    font-weight: 500;
+
+    box-shadow:
+        0 3px 10px rgba(23, 78, 82, 0.03);
+}
+
+
+.priority-badge > span:first-child {
+    color: var(--paw-sage-dark);
+
+    font-size: 14px;
+}
+
+
+.priority-heart {
+    color: var(--paw-sage);
+
+    font-size: 14px;
+}
+
+
+/* ============================================================
+   MAIN
+   ============================================================ */
+
+.breed-main {
+    width: min(1180px, 92%);
+
+    margin: 0 auto;
+
+    padding: 28px 0 40px;
+}
+
+
+/* ============================================================
+   BACK BUTTON
+   ============================================================ */
+
+.page-back-btn {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 14px;
+
+    width: fit-content;
+
+    border: 1px solid var(--paw-border);
+
+    border-radius: 9px;
+
+    background: var(--paw-surface);
+
+    color: var(--paw-primary);
+
+    font-family: inherit;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.page-back-btn:hover {
+    background: var(--paw-sage-light);
+
+    border-color: var(--paw-sage);
+
+    transform: translateX(-2px);
+}
+
+
+.page-back-btn span {
+    font-size: 16px;
+    line-height: 1;
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.breed-hero {
+    text-align: center;
+
+    padding: 28px 20px 30px;
+}
+
+
+.breed-hero h2 {
+    margin: 15px 0 9px;
+
+    color: var(--paw-text);
+
+    font-family:
+        Poppins,
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 34px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.8px;
+}
+
+
+.breed-hero h2 span {
+    color: var(--paw-primary);
+}
+
+
+.breed-hero p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: var(--paw-text-light);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+.breed-hero p strong {
+    color: var(--paw-primary);
+
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   HERO TIP
+   ============================================================ */
+
+.hero-tip {
+    width: fit-content;
+
+    margin: 18px auto 0;
+
+    padding: 8px 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    border-radius: 10px;
+
+    background: var(--paw-warning-bg);
+
+    border: 1px solid var(--paw-warning-border);
+
+    color: #7b633f;
+
+    font-size: 10px;
+}
+
+
+.tip-bulb {
+    color: var(--paw-warning);
+
+    font-size: 16px;
+}
+
+
+/* ============================================================
+   UPLOAD / PREVIEW WORKSPACE
+   ============================================================ */
+
+.detection-workspace {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+    padding: 26px 28px 28px;
+
+    background: var(--paw-surface);
+
+    border: 1px solid var(--paw-border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--paw-shadow);
+}
+
+
+/* ============================================================
+   PANEL
+   ============================================================ */
+
+.upload-panel,
+.preview-panel {
+    min-width: 0;
+}
+
+
+.panel-title {
+    margin: 0 0 13px;
+
+    color: var(--paw-text);
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   DROPZONE
+   ============================================================ */
+
+.dropzone {
+    height: 345px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    border: 2px dashed #b7cbc4;
+
+    border-radius: 16px;
+
+    background: var(--paw-surface-soft);
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.dropzone:hover {
+    border-color: var(--paw-sage);
+
+    background: var(--paw-sage-light);
+
+    transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   UPLOAD ICON
+   ============================================================ */
+
+.upload-cloud {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 17px;
+
+    border-radius: 50%;
+
+    background: var(--paw-sage-light);
+
+    color: var(--paw-primary);
+
+    font-size: 34px;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+.dropzone h3 {
+    margin: 0;
+
+    color: var(--paw-text);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.dropzone > p {
+    margin: 10px 0;
+
+    color: var(--paw-text-light);
+
+    font-size: 11px;
+}
+
+
+/* ============================================================
+   CHOOSE IMAGE BUTTON
+   ============================================================ */
+
+.choose-image-btn {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 20px;
+
+    border: 1px solid var(--paw-primary);
+
+    border-radius: 9px;
+
+    background: var(--paw-surface);
+
+    color: var(--paw-primary);
+
+    font-family: inherit;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+
+.choose-image-btn:hover {
+    background: var(--paw-primary);
+
+    color: #ffffff;
+}
+
+
+.choose-image-btn span {
+    color: inherit;
+
+    font-size: 15px;
+}
+
+
+.dropzone small {
+    margin-top: 15px;
+
+    color: var(--paw-muted);
+
+    font-size: 9px;
+}
+
+
+/* ============================================================
+   UPLOADED DROPZONE
+   ============================================================ */
+
+.uploaded-dropzone {
+    position: relative;
+
+    border-style: solid;
+
+    border-color: #b9cec7;
+
+    cursor: default;
+}
+
+
+.uploaded-dropzone:hover {
+    transform: none;
+
+    border-color: #b9cec7;
+
+    background: var(--paw-surface-soft);
+}
+
+
+.uploaded-icon {
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--paw-success-bg);
+
+    color: var(--paw-success);
+
+    font-size: 27px;
+    font-weight: 700;
+}
+
+
+.uploaded-dropzone h3 {
+    margin-top: 15px;
+
+    color: var(--paw-text);
+
+    font-size: 14px;
+}
+
+
+.uploaded-dropzone p {
+    max-width: 280px;
+
+    margin: 6px 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color: var(--paw-muted);
+
+    font-size: 10px;
+}
+
+
+.uploaded-check {
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--paw-success-bg);
+
+    color: var(--paw-success);
+
+    font-size: 12px;
+}
+
+
+.change-image-link {
+    margin-top: 10px;
+
+    color: var(--paw-primary);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.change-image-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   PREVIEW
+   ============================================================ */
+
+.preview-container {
+    height: 345px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #eef2f0;
+
+    border: 1px solid var(--paw-border);
+}
+
+
+.pet-preview {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.empty-preview {
+    text-align: center;
+
+    color: var(--paw-muted);
+}
+
+
+.empty-preview div {
+    font-size: 40px;
+
+    opacity: 0.45;
+}
+
+
+.empty-preview p {
+    margin-top: 10px;
+
+    font-size: 10px;
+}
+
+
+/* ============================================================
+   PREVIEW REMOVE BUTTON
+   ============================================================ */
+
+.preview-remove {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(220, 229, 225, 0.9);
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: var(--paw-text-light);
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 10px rgba(30, 50, 45, 0.1);
+
+    transition: 0.2s ease;
+}
+
+
+.preview-remove:hover {
+    background: var(--paw-danger-bg);
+
+    color: var(--paw-danger);
+}
+
+
+/* ============================================================
+   DETECT BUTTON
+   ============================================================ */
+
+.detect-btn {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--paw-primary);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(23, 78, 82, 0.16);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.detect-btn:hover:not(.disabled) {
+    background: var(--paw-primary-light);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 20px rgba(23, 78, 82, 0.2);
+}
+
+
+.detect-btn.disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    box-shadow: none;
+}
+
+
+/* ============================================================
+   BUTTON SPINNER
+   ============================================================ */
+
+.button-spinner {
+    width: 15px;
+    height: 15px;
+
+    border: 2px solid rgba(255, 255, 255, 0.4);
+
+    border-top-color: #ffffff;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ============================================================
+   LOADING MESSAGE
+   ============================================================ */
+
+.loading-message {
+    margin-top: 20px;
+
+    padding: 15px 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    border-radius: 12px;
+
+    background: var(--paw-primary-soft);
+
+    border: 1px solid #cddfdb;
+}
+
+
+.loading-paw {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--paw-sage-light);
+
+    color: var(--paw-primary);
+
+    font-size: 20px;
+
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+
+.loading-message strong {
+    display: block;
+
+    color: var(--paw-primary);
+
+    font-size: 12px;
+}
+
+
+.loading-message p {
+    margin: 3px 0 0;
+
+    color: var(--paw-text-light);
+
+    font-size: 9px;
+}
+
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+}
+
+
+/* ============================================================
+   ERROR
+   ============================================================ */
+
+.error-message {
+    margin-top: 20px;
+
+    padding: 15px 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    border-radius: 12px;
+
+    background: var(--paw-danger-bg);
+
+    border: 1px solid #ebcccc;
+}
+
+
+.error-symbol {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f8dede;
+
+    color: var(--paw-danger);
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+
+.error-message strong {
+    color: #a94f4f;
+
+    font-size: 12px;
+}
+
+
+.error-message p {
+    margin: 4px 0 0;
+
+    color: #806b6b;
+
+    font-size: 9px;
+}
+
+
+/* ============================================================
+   DETECTION RESULT SECTION
+   ============================================================ */
+
+.result-section {
+    margin-top: 32px;
+}
+
+
+.section-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin: 0 0 14px 4px;
+}
+
+
+.section-heading span {
+    color: var(--paw-sage-dark);
+
+    font-size: 20px;
+}
+
+
+.section-heading h2 {
+    margin: 0;
+
+    color: var(--paw-text);
+
+    font-family: inherit;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   RESULT CARD
+   ============================================================ */
+
+.result-card {
+    display: grid;
+
+    grid-template-columns:
+        150px
+        minmax(0, 1fr)
+        280px;
+
+    gap: 25px;
+
+    padding: 26px;
+
+    background: var(--paw-surface);
+
+    border: 1px solid var(--paw-border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--paw-shadow);
+}
+
+
+/* ============================================================
+   RESULT IMAGE
+   ============================================================ */
+
+.result-image-wrapper {
+    width: 150px;
+    height: 150px;
+
+    padding: 5px;
+
+    border-radius: 50%;
+
+    border: 2px solid var(--paw-sage);
+
+    background: var(--paw-sage-light);
+}
+
+
+.result-pet-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+/* ============================================================
+   RESULT MAIN
+   ============================================================ */
+
+.result-main {
+    min-width: 0;
+
+    padding-top: 5px;
+}
+
+
+.result-small-label {
+    color: var(--paw-sage-dark);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.result-main h2 {
+    margin: 7px 0 10px;
+
+    color: var(--paw-text);
+
+    font-family: inherit;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    text-transform: capitalize;
+}
+
+
+/* ============================================================
+   CONFIDENCE
+   ============================================================ */
+
+.confidence-pill {
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 7px 11px;
+
+    border-radius: 8px;
+
+    background: var(--paw-sage-light);
+
+    color: var(--paw-text-light);
+
+    font-size: 10px;
+
+    border: 1px solid #d8e6e0;
+}
+
+
+.confidence-pill span {
+    color: var(--paw-sage-dark);
+}
+
+
+.confidence-pill strong {
+    color: var(--paw-primary);
+}
+
+
+.result-description {
+    max-width: 430px;
+
+    margin: 13px 0 15px;
+
+    color: var(--paw-text-light);
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+
+/* ============================================================
+   USE BREED BUTTON
+   ============================================================ */
+
+.use-breed-result-btn {
+    width: fit-content;
+    min-width: 145px;
+    height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 17px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: var(--paw-primary);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.use-breed-result-btn:hover {
+    background: var(--paw-primary-light);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 12px rgba(23, 78, 82, 0.18);
+}
+
+
+.use-breed-result-btn span {
+    font-size: 15px;
+}
+
+
+/* ============================================================
+   ABOUT RESULT
+   ============================================================ */
+
+.about-result {
+    padding: 19px;
+
+    border-radius: 14px;
+
+    background: var(--paw-surface-soft);
+
+    border: 1px solid var(--paw-border);
+}
+
+
+.about-result h3 {
+    margin: 0 0 15px;
+
+    color: var(--paw-text);
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.result-point {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-bottom: 11px;
+}
+
+
+.result-point:last-child {
+    margin-bottom: 0;
+}
+
+
+.result-point > span {
+    width: 17px;
+    height: 17px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--paw-sage-light);
+
+    color: var(--paw-sage-dark);
+
+    border: 1px solid #cbded7;
+
+    font-size: 8px;
+    font-weight: 700;
+}
+
+
+.result-point p {
+    margin: 0;
+
+    color: var(--paw-text-light);
+
+    font-size: 9px;
+
+    line-height: 1.55;
+}
+
+
+/* ============================================================
+   HELP / TRY AGAIN
+   ============================================================ */
+
+.result-help {
+    margin: 21px 4px 0;
+
+    min-height: 65px;
+
+    padding: 10px 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    border-radius: 13px;
+
+    background: var(--paw-warning-bg);
+
+    border: 1px solid var(--paw-warning-border);
+}
+
+
+.help-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 27px;
+}
+
+
+.help-content {
+    flex: 1;
+    min-width: 0;
+}
+
+
+.help-content strong {
+    display: block;
+
+    color: var(--paw-text);
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+.help-content p {
+    margin: 3px 0 0;
+
+    color: #776b58;
+
+    font-size: 9px;
+}
+
+
+.try-again-btn {
+    flex: 0 0 auto;
+
+    width: fit-content;
+    min-width: 165px;
+    height: 40px;
+
+    padding: 0 16px;
+
+    margin-left: auto;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 1px solid #d2b889;
+
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    color: #765f3d;
+
+    font-family: inherit;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.try-again-btn:hover {
+    background: #ffffff;
+
+    border-color: var(--paw-warning);
+
+    transform: translateY(-1px);
+}
+
+
+/* ============================================================
+   BOTTOM NAVIGATION
+   ============================================================ */
+
+.bottom-navigation {
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 72px;
+
+    padding: 0 8%;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        90px
+        1fr
+        1fr;
+
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-top: 1px solid var(--paw-border);
+
+    box-shadow:
+        0 -5px 20px rgba(30, 60, 55, 0.05);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 50;
+}
+
+
+.bottom-navigation button {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--paw-text-light);
+
+    font-family: inherit;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.bottom-navigation button:hover {
+    color: var(--paw-primary);
+}
+
+
+.bottom-navigation button span {
+    font-size: 17px;
+}
+
+
+.bottom-navigation button.active {
+    color: var(--paw-primary);
+
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   CENTER PAW
+   ============================================================ */
+
+.nav-center-paw {
+    width: 56px;
+    height: 56px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--paw-surface);
+
+    border: 2px solid var(--paw-sage);
+
+    box-shadow:
+        0 4px 13px rgba(23, 78, 82, 0.13);
+
+    color: var(--paw-primary);
+
+    font-size: 24px;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1000px) {
+
+    .result-card {
+        grid-template-columns:
+            130px
+            minmax(0, 1fr);
+    }
+
+
+    .about-result {
+        grid-column: 1 / -1;
+    }
+
+
+    .result-image-wrapper {
+        width: 130px;
+        height: 130px;
+    }
+
+
+    .bottom-navigation {
+        padding: 0 4%;
+    }
+
+}
+
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 760px) {
+
+    .breed-navbar {
+        padding: 0 20px;
+    }
+
+
+    .priority-badge {
+        padding: 9px 11px;
+    }
+
+
+    .priority-badge > span:nth-child(2) {
+        display: none;
+    }
+
+
+    .breed-main {
+        width: 94%;
+
+        padding-top: 20px;
+    }
+
+
+    .breed-hero {
+        padding: 24px 10px 28px;
+    }
+
+
+    .breed-hero h2 {
+        font-size: 30px;
+    }
+
+
+    .detection-workspace {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        padding: 20px;
+    }
+
+
+    .dropzone,
+    .preview-container {
+        height: 300px;
+    }
+
+
+    .result-card {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        justify-items: center;
+    }
+
+
+    .result-main {
+        min-width: 0;
+
+        padding-top: 5px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .confidence-pill {
+        margin: 0 auto;
+    }
+
+
+    .result-description {
+        text-align: center;
+    }
+
+
+    .about-result {
+        width: 100%;
+
+        text-align: left;
+    }
+
+
+    .result-help {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+
+    .help-content {
+        min-width: 180px;
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+    .breed-navbar {
+        height: 76px;
+
+        padding: 0 16px;
+    }
+
+
+    .breed-logo-wrapper {
+        width: 47px;
+        height: 47px;
+    }
+
+
+    .breed-logo {
+        width: 39px;
+        height: 39px;
+    }
+
+
+    .breed-brand-text h1 {
+        font-size: 21px;
+    }
+
+
+    .breed-brand-text p {
+        display: none;
+    }
+
+
+    .priority-badge {
+        border: none;
+
+        padding: 6px;
+    }
+
+
+    .page-back-btn {
+        font-size: 10px;
+
+        padding: 8px 12px;
+    }
+
+
+    .breed-hero h2 {
+        font-size: 27px;
+    }
+
+
+    .breed-hero p {
+        font-size: 11px;
+    }
+
+
+    .hero-tip {
+        font-size: 9px;
+    }
+
+
+    .detection-workspace {
+        padding: 15px;
+
+        border-radius: 15px;
+    }
+
+
+    .dropzone,
+    .preview-container {
+        height: 260px;
+    }
+
+
+    .result-card {
+        padding: 20px;
+    }
+
+
+    .bottom-navigation {
+        height: 66px;
+
+        padding: 0 5px;
+
+        grid-template-columns:
+            1fr
+            1fr
+            65px
+            1fr
+            1fr;
+    }
+
+
+    .bottom-navigation button {
+        flex-direction: column;
+
+        gap: 3px;
+
+        font-size: 8px;
+    }
+
+
+    .bottom-navigation button span {
+        font-size: 15px;
+    }
+
+
+    .nav-center-paw {
+        width: 50px;
+        height: 50px;
+
+        font-size: 21px;
+    }
+
+
+    .result-help {
+        padding: 12px;
+    }
+
+
+    .try-again-btn {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+}

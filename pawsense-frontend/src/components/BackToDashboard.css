@@ -1,0 +1,46 @@
+
+.feature-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: 0 0 24px 0;
+  flex-shrink: 0;
+
+  color: #173f46;
+  background: #ffffff;
+  border: 1px solid #e4ece8;
+  border-radius: 50%;
+
+  box-shadow: 0 2px 8px rgba(23, 63, 70, 0.09);
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.feature-back-button svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.feature-back-button:hover {
+  background: #eaf5ef;
+  box-shadow: 0 4px 12px rgba(23, 63, 70, 0.13);
+  transform: translateX(-2px);
+}
+
+.feature-back-button:active {
+  transform: scale(0.96);
+}
+
+.feature-back-button:focus-visible {
+  outline: 2px solid #4d9b80;
+  outline-offset: 3px;
+}
