@@ -1,46 +1,32 @@
+
 from pathlib import Path
 
 from pawsense_vocal_ai.generalized_predictor import (
     PawSenseGeneralizedPredictor,
 )
 
-
-# ---------------------------------------------------------
-# Model path
-# ---------------------------------------------------------
-
 BASE_DIR = Path(__file__).resolve().parents[1]
+MODEL_PATH = BASE_DIR / "models" / "pawsense_portable_model.npz"
 
-MODEL_PATH = (
-    BASE_DIR
-    / "models"
-    / "pawsense_portable_model.npz"
-)
+predictor = None
 
 
-# ---------------------------------------------------------
-# Load predictor ONCE when backend starts
-# ---------------------------------------------------------
+def get_predictor():
+    global predictor
 
-predictor = PawSenseGeneralizedPredictor(
-    MODEL_PATH,
-    strict=True,
-    allow_legacy_fallback=True,
-)
+    if predictor is None:
+        print("Initializing PawSense emotion predictor...", flush=True)
 
+        predictor = PawSenseGeneralizedPredictor(
+            MODEL_PATH,
+            strict=True,
+            allow_legacy_fallback=True,
+        )
 
-# ---------------------------------------------------------
-# Emotion prediction
-# ---------------------------------------------------------
+        print("PawSense emotion predictor initialized.", flush=True)
+
+    return predictor
+
 
 def predict_emotion(audio_path: str):
-    """
-    Run PawSense emotion detection on an audio file.
-
-    The model is already loaded when the backend starts.
-    It is NOT loaded again for every request.
-    """
-
-    result = predictor.predict(audio_path)
-
-    return result
+    return get_predictor().predict(audio_path)
