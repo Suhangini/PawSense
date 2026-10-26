@@ -1,13 +1,11 @@
 import axios from "axios";
 
-
 const api = axios.create({
-  baseURL: "https://pawsense-h9si.onrender.com/api",
+  baseURL: "http://127.0.0.1:8000/api",
   headers: {
     "Content-Type": "application/json",
   },
 });
-
 
 // ============================================================
 // ATTACH JWT TOKEN TO PROTECTED REQUESTS

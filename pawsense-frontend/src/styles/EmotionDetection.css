@@ -1,147 +1,123 @@
+
 /* =========================================================
    PAWSENSE — EMOTION DETECTION
+   Clean, responsive, polished pet-care interface
    ========================================================= */
 
 .emotion-page {
   min-height: 100vh;
-  padding: 38px 50px 60px;
-  background: #f6f8f7;
-  color: #263b37;
+  box-sizing: border-box;
+  padding: 36px 48px 60px;
+  background: #f4f8f6;
+  color: #263f37;
+  font-family: inherit;
 }
 
+.emotion-page *,
+.emotion-page *::before,
+.emotion-page *::after {
+  box-sizing: border-box;
+}
 
 /* =========================================================
    PAGE HEADER
    ========================================================= */
 
 .emotion-header {
+  width: 100%;
   max-width: 1080px;
-  margin: 0 auto 38px;
+  margin: 0 auto 30px;
 }
 
 .back-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   width: fit-content;
-
-  border: 1px solid #dfe8e4;
+  padding: 9px 15px;
+  border: 1px solid #dce8e2;
+  border-radius: 10px;
   background: #ffffff;
-  color: #416b62;
-
-  padding: 8px 14px;
-  border-radius: 8px;
-
-  font-size: 12px;
+  color: #416b60;
+  font-family: inherit;
+  font-size: 13px;
   font-weight: 600;
-
   cursor: pointer;
-
-  box-shadow: 0 2px 8px rgba(45, 75, 68, 0.05);
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+  box-shadow: 0 3px 10px rgba(40, 75, 62, 0.04);
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .back-button:hover {
-  background: #f1f7f4;
-  border-color: #bfd3cc;
+  background: #edf6f1;
   transform: translateY(-1px);
 }
 
 .emotion-heading {
-  margin-top: 30px;
-  max-width: 650px;
+  max-width: 720px;
+  margin-top: 28px;
 }
 
 .feature-label {
   display: inline-block;
-
-  margin-bottom: 9px;
-
-  color: #5d8b80;
-
+  margin-bottom: 10px;
+  color: #4d8978;
   font-size: 11px;
-  font-weight: 700;
-
-  letter-spacing: 1.4px;
+  font-weight: 750;
+  letter-spacing: 1.7px;
 }
 
 .emotion-heading h1 {
   margin: 0;
-
-  color: #203f38;
-
-  font-size: 38px;
-  line-height: 1.1;
-  font-weight: 700;
-
-  letter-spacing: -0.8px;
+  color: #20483b;
+  font-size: clamp(30px, 4vw, 40px);
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -1px;
 }
 
 .emotion-heading p {
-  max-width: 570px;
-
-  margin: 10px 0 0;
-
-  color: #71827d;
-
+  max-width: 590px;
+  margin: 12px 0 0;
+  color: #72847b;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.75;
 }
 
-
 /* =========================================================
-   MAIN UPLOAD CARD
+   MAIN AUDIO CARD
    ========================================================= */
 
 .emotion-card {
+  width: 100%;
   max-width: 900px;
-
   margin: 0 auto;
-
-  padding: 42px 55px;
-
+  padding: 42px 48px;
   background: #ffffff;
-
-  border: 1px solid #e1e9e5;
+  border: 1px solid #e0ebe5;
   border-radius: 24px;
-
   text-align: center;
-
-  box-shadow:
-    0 15px 45px rgba(39, 69, 62, 0.07);
+  box-shadow: 0 12px 36px rgba(35, 76, 61, 0.055);
 }
 
-
 /* =========================================================
-   UPLOAD ICON
+   AUDIO ICON
    ========================================================= */
 
 .upload-icon {
-  width: 68px;
-  height: 68px;
-
+  width: 70px;
+  height: 70px;
   margin: 0 auto 20px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background: #edf6f2;
-
-  border: 1px solid #dcebe5;
-
-  border-radius: 50%;
+  background: #edf7f1;
+  border: 1px solid #deeee4;
+  border-radius: 22px;
 }
 
 .upload-icon span {
-  font-size: 28px;
+  font-size: 30px;
 }
-
 
 /* =========================================================
    UPLOAD HEADING
@@ -149,56 +125,41 @@
 
 .emotion-card h2 {
   margin: 0;
-
-  color: #294a42;
-
-  font-size: 24px;
-  font-weight: 700;
+  color: #294b3e;
+  font-size: 25px;
+  line-height: 1.35;
+  font-weight: 750;
 }
 
 .upload-description {
-  max-width: 550px;
-
-  margin: 9px auto 27px;
-
-  color: #7a8985;
-
+  max-width: 540px;
+  margin: 10px auto 28px;
+  color: #7b8c83;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-
 /* =========================================================
-   FILE UPLOAD AREA
+   LEGACY FILE UPLOAD AREA
    ========================================================= */
 
 .audio-upload {
   width: 100%;
   min-height: 145px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
-  box-sizing: border-box;
-
-  border: 1.5px dashed #a8c4bb;
+  padding: 20px;
+  border: 1.5px dashed #a8c7b8;
   border-radius: 17px;
-
-  background: #fafcfb;
-
+  background: #f9fcfa;
   cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .audio-upload:hover {
-  background: #f3f8f5;
-  border-color: #6f9d91;
-  transform: translateY(-1px);
+  background: #eff8f2;
+  border-color: #6fa18b;
 }
 
 .audio-upload input {
@@ -209,194 +170,137 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 7px;
-
   padding: 20px;
 }
 
 .upload-title {
-  color: #355f56;
-
+  color: #355f4e;
   font-size: 15px;
-  font-weight: 650;
+  font-weight: 700;
 }
 
 .upload-subtitle {
-  max-width: 500px;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-
-  color: #7e8e89;
-
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  color: #7e8e85;
   font-size: 13px;
 }
 
 .upload-formats {
-  margin-top: 3px;
-
-  color: #a0aca8;
-
+  margin-top: 5px;
+  color: #96a59d;
   font-size: 11px;
-  letter-spacing: 0.2px;
+  line-height: 1.6;
 }
 
 /* =========================================================
-   EMOTION INPUT OPTIONS
+   UPLOAD AND RECORD OPTIONS
    ========================================================= */
 
 .emotion-input-options {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
   width: 100%;
-  margin-top: 8px;
+  margin-top: 12px;
 }
-
-
-/* =========================================================
-   INPUT OPTION CARD
-   ========================================================= */
 
 .emotion-input-option {
-  min-height: 105px;
-  padding: 20px;
-
+  min-width: 0;
+  min-height: 112px;
+  padding: 22px;
   display: flex;
   align-items: center;
-  gap: 15px;
-
-  box-sizing: border-box;
-
-  border: 1.5px solid #dce8e3;
-  border-radius: 16px;
-
-  background: #fafcfb;
-
-  color: #294a42;
-
-  text-align: left;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-
-/* Remove default button styling */
-
-button.emotion-input-option {
+  gap: 16px;
+  border: 1px solid #dce9e1;
+  border-radius: 17px;
+  background: #f9fcfa;
+  color: #294a3d;
   font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-
-/* Hover */
 
 .emotion-input-option:hover:not(:disabled) {
-  background: #f1f8f5;
-  border-color: #8eb3a8;
-
+  background: #f0f8f3;
+  border-color: #a3c8b3;
   transform: translateY(-2px);
-
-  box-shadow:
-    0 7px 18px rgba(49, 95, 86, 0.08);
+  box-shadow: 0 8px 20px rgba(43, 98, 72, 0.07);
 }
 
-
-/* Disabled */
+button.emotion-input-option {
+  appearance: none;
+}
 
 .emotion-input-option:disabled {
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
+  box-shadow: none;
 }
 
-
-/* =========================================================
-   INPUT OPTION ICON
-   ========================================================= */
-
-.input-option-icon {
-  width: 50px;
-  height: 50px;
-
-  flex-shrink: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: #edf6f2;
-
-  border: 1px solid #dcebe5;
-
-  border-radius: 13px;
-
-  font-size: 22px;
+.emotion-input-option:focus-visible,
+.analyze-button:focus-visible,
+.continue-button:focus-visible,
+.back-button:focus-visible {
+  outline: 3px solid #9acbb0;
+  outline-offset: 3px;
 }
-
-
-/* =========================================================
-   INPUT OPTION TEXT
-   ========================================================= */
-
-.input-option-content {
-  display: flex;
-  flex-direction: column;
-
-  gap: 5px;
-}
-
-
-.input-option-title {
-  color: #355f56;
-
-  font-size: 15px;
-  font-weight: 700;
-}
-
-
-.input-option-subtitle {
-  color: #7e8e89;
-
-  font-size: 12px;
-
-  line-height: 1.45;
-}
-
-
-/* =========================================================
-   HIDE FILE INPUT
-   ========================================================= */
 
 .emotion-input-option input[type="file"] {
   display: none;
 }
 
+/* Input option icons */
 
-/* =========================================================
-   RECORDING ACTIVE
-   ========================================================= */
+.input-option-icon {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf5ee;
+  border: 1px solid #deece3;
+  border-radius: 15px;
+  font-size: 23px;
+}
+
+.input-option-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-option-title {
+  color: #315b49;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 750;
+}
+
+.input-option-subtitle {
+  color: #7b8d83;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* Recording state */
 
 .emotion-input-option.recording-active {
-  background: #fff6f5;
-
-  border-color: #d88d84;
+  background: #fff6f3;
+  border-color: #e8bdb3;
 }
-
 
 .emotion-input-option.recording-active .input-option-icon {
-  background: #fff0ee;
-
-  border-color: #efd0cb;
+  background: #ffebe6;
+  border-color: #f0d1c8;
 }
-
 
 /* =========================================================
    RECORDING STATUS
@@ -404,204 +308,136 @@ button.emotion-input-option {
 
 .recording-status {
   width: 100%;
-
-  box-sizing: border-box;
-
-  margin-top: 18px;
-  padding: 15px 18px;
-
+  margin-top: 20px;
+  padding: 17px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 12px;
-
-  background: #fff7f5;
-
-  border: 1px solid #efd7d3;
-
-  border-radius: 13px;
-
-  color: #9a5149;
+  background: #fff7f4;
+  border: 1px solid #f0dcd5;
+  border-radius: 14px;
+  color: #98574c;
 }
-
 
 .recording-status > div {
   display: flex;
   align-items: center;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 9px;
 }
-
 
 .recording-status strong {
   font-size: 13px;
 }
 
-
 .recording-status span:not(.recording-dot) {
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 750;
 }
-
-
-/* =========================================================
-   RECORDING DOT
-   ========================================================= */
 
 .recording-dot {
   width: 10px;
   height: 10px;
-
+  flex: 0 0 10px;
   display: inline-block;
-
-  background: #d95c52;
-
+  background: #d96557;
   border-radius: 50%;
-
   animation: recording-pulse 1.2s ease-in-out infinite;
 }
 
-
 @keyframes recording-pulse {
-
-  0% {
+  0%, 100% {
     opacity: 1;
     transform: scale(1);
   }
 
   50% {
     opacity: 0.45;
-    transform: scale(0.75);
+    transform: scale(0.78);
   }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-  .emotion-input-options {
-    grid-template-columns: 1fr;
-  }
-
-  .emotion-input-option {
-    min-height: 90px;
-  }
-
 }
 
 /* =========================================================
-   SELECTED FILE
+   SELECTED AUDIO FILE
    ========================================================= */
 
 .selected-file {
-  margin-top: 18px;
-
-  padding: 17px;
-
+  width: 100%;
+  min-width: 0;
+  margin-top: 22px;
+  padding: 20px;
   background: #f7faf8;
-
-  border: 1px solid #e6eeeb;
-  border-radius: 15px;
-
+  border: 1px solid #e1ece5;
+  border-radius: 17px;
   text-align: left;
 }
 
 .file-info {
+  min-width: 0;
   display: flex;
   align-items: center;
-
-  gap: 13px;
+  gap: 14px;
 }
 
 .file-icon {
-  width: 42px;
-  height: 42px;
-
-  flex-shrink: 0;
-
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background: #eaf4f0;
-
-  border-radius: 11px;
-
-  font-size: 18px;
+  background: #e9f4ed;
+  border-radius: 14px;
+  font-size: 21px;
 }
 
 .file-details {
   min-width: 0;
-
   display: flex;
   flex-direction: column;
-
-  gap: 4px;
+  gap: 5px;
 }
 
 .file-name {
-  max-width: 600px;
-
+  max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-
-  color: #365c53;
-
+  color: #345c49;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 750;
 }
 
 .file-size {
-  color: #8a9894;
-
-  font-size: 11px;
+  color: #84958b;
+  font-size: 12px;
 }
-
-
-/* =========================================================
-   AUDIO PLAYER
-   ========================================================= */
 
 .audio-player {
+  display: block;
   width: 100%;
-
-  margin-top: 15px;
-
-  height: 42px;
+  max-width: 100%;
+  height: 44px;
+  margin-top: 18px;
 }
 
-
 /* =========================================================
-   ERROR
+   ERROR MESSAGE
    ========================================================= */
 
 .emotion-error {
-  margin-top: 17px;
-
-  padding: 12px 15px;
-
-  background: #fff4f2;
-
-  border: 1px solid #efd5d1;
-  border-radius: 10px;
-
-  color: #a6534b;
-
+  margin-top: 20px;
+  padding: 15px 17px;
+  background: #fff4f1;
+  border: 1px solid #f0d5cd;
+  border-radius: 12px;
+  color: #a45246;
   font-size: 13px;
-
+  line-height: 1.65;
   text-align: left;
+  overflow-wrap: anywhere;
 }
-
 
 /* =========================================================
    ANALYZE BUTTON
@@ -609,64 +445,48 @@ button.emotion-input-option {
 
 .analyze-button {
   width: 100%;
-
-  margin-top: 23px;
-
-  padding: 14px 20px;
-
-  border: none;
-  border-radius: 12px;
-
-  background: #3f766b;
+  min-height: 55px;
+  margin-top: 25px;
+  padding: 15px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #3e7964;
+  border-radius: 13px;
+  background: #3e7964;
   color: #ffffff;
-
-  font-size: 14px;
-  font-weight: 650;
-
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 750;
   cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease,
+  transition: background 0.2s ease, transform 0.2s ease,
     box-shadow 0.2s ease;
 }
 
 .analyze-button:hover:not(:disabled) {
-  background: #315f56;
-
+  background: #306651;
   transform: translateY(-1px);
-
-  box-shadow: 0 7px 18px rgba(49, 95, 86, 0.16);
+  box-shadow: 0 8px 20px rgba(48, 102, 81, 0.16);
 }
 
 .analyze-button:disabled {
-  opacity: 0.48;
-
+  opacity: 0.55;
   cursor: not-allowed;
-
   transform: none;
+  box-shadow: none;
 }
 
-
-/* =========================================================
-   LOADING
-   ========================================================= */
+/* Loading spinner */
 
 .loading-spinner {
-  width: 14px;
-  height: 14px;
-
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
   display: inline-block;
-
-  margin-right: 8px;
-
-  border: 2px solid rgba(255, 255, 255, 0.4);
+  margin-right: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.42);
   border-top-color: #ffffff;
-
   border-radius: 50%;
-
-  vertical-align: -2px;
-
   animation: emotion-spin 0.7s linear infinite;
 }
 
@@ -676,247 +496,390 @@ button.emotion-input-option {
   }
 }
 
-
 /* =========================================================
-   RESULT CARD
+   EMOTION ANALYSIS RESULT CARD
    ========================================================= */
 
 .emotion-result {
+  width: 100%;
   max-width: 900px;
-
   margin: 30px auto 0;
-
-  padding: 32px 38px;
-
+  padding: 32px;
   background: #ffffff;
-
-  border: 1px solid #e1e9e5;
-  border-radius: 22px;
-
-  box-shadow:
-    0 12px 35px rgba(40, 68, 62, 0.06);
+  border: 1px solid #deebe4;
+  border-radius: 24px;
+  box-shadow: 0 12px 36px rgba(35, 76, 61, 0.055);
+  animation: result-appear 0.35s ease both;
 }
 
+@keyframes result-appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
 
-/* =========================================================
-   RESULT HEADER
-   ========================================================= */
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Result header */
 
 .result-header {
   display: flex;
   align-items: center;
-
-  gap: 14px;
-
+  gap: 17px;
   padding-bottom: 24px;
-
-  border-bottom: 1px solid #e9eeec;
+  border-bottom: 1px solid #e6eee9;
 }
 
 .result-icon {
-  width: 48px;
-  height: 48px;
-
-  flex-shrink: 0;
-
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #edf7f0;
+  border: 1px solid #deeee3;
+  border-radius: 18px;
+  font-size: 25px;
+}
 
-  background: #edf6f2;
-
-  border-radius: 13px;
-
-  font-size: 21px;
+.result-header > div:last-child {
+  min-width: 0;
 }
 
 .result-label {
   display: block;
-
-  margin-bottom: 3px;
-
-  color: #6a958b;
-
-  font-size: 10px;
-  font-weight: 700;
-
-  letter-spacing: 1.2px;
+  margin-bottom: 5px;
+  color: #528b76;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 1.5px;
 }
 
 .result-header h2 {
   margin: 0;
-
-  color: #294a42;
-
-  font-size: 21px;
-  font-weight: 700;
+  color: #254b3c;
+  font-size: 24px;
+  line-height: 1.35;
+  font-weight: 750;
+  letter-spacing: -0.35px;
 }
 
 .result-header p {
-  margin: 4px 0 0;
-
-  color: #82908c;
-
-  font-size: 12px;
+  margin: 7px 0 0;
+  color: #788980;
+  font-size: 13px;
+  line-height: 1.65;
 }
 
-
-/* =========================================================
-   EMOTION RESULT GRID
-   ========================================================= */
+/* Result grid: one tile stretches; multiple tiles align evenly */
 
 .emotion-result-grid {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+  margin: 24px 0;
+}
 
-  grid-template-columns: 1fr 1fr;
-
-  gap: 15px;
-
-  margin-top: 25px;
+.emotion-result-grid:has(.emotion-result-item:only-child) {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .emotion-result-item {
-  min-height: 105px;
-
-  padding: 21px;
-
+  min-width: 0;
+  min-height: 120px;
+  padding: 23px 25px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
+  gap: 11px;
+  background: #f1f8f3;
+  border: 1px solid #e0eee4;
+  border-radius: 17px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
 
-  background: #f8faf9;
-
-  border: 1px solid #e8efec;
-  border-radius: 15px;
+.emotion-result-item:hover {
+  background: #edf6ef;
+  border-color: #d3e7d9;
 }
 
 .result-item-label {
-  margin-bottom: 9px;
-
-  color: #7d8c87;
-
+  margin: 0;
+  color: #72877b;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 650;
+  line-height: 1.6;
+  letter-spacing: 0.4px;
 }
 
 .emotion-state {
-  color: #315f56;
-
-  font-size: 19px;
-  line-height: 1.35;
+  color: #28694f;
+  font-size: 28px;
+  line-height: 1.3;
+  font-weight: 800;
+  overflow-wrap: anywhere;
 }
 
 .emotion-species {
-  color: #315f56;
-  font-size: 19px;
-  font-weight: 700;
+  color: #315f4a;
+  font-size: 21px;
+  line-height: 1.4;
+  font-weight: 750;
+  overflow-wrap: anywhere;
 }
 
 .emotion-confidence {
-  color: #315f56;
-
-  font-size: 22px;
-  font-weight: 700;
+  color: #315f4a;
+  font-size: 23px;
+  line-height: 1.4;
+  font-weight: 750;
+  overflow-wrap: anywhere;
 }
 
+/* When the result contains class probabilities */
 
-/* =========================================================
-   CONTINUE BUTTON
-   ========================================================= */
+.emotion-result-grid:has(.emotion-confidence) {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+/* Continue button */
 
 .continue-button {
   width: 100%;
-
-  margin-top: 23px;
-
-  padding: 13px 20px;
-
-  border: 1px solid #d5e3de;
-  border-radius: 11px;
-
-  background: #ffffff;
-  color: #3f7167;
-
+  min-height: 54px;
+  margin-top: 2px;
+  padding: 15px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #3e7964;
+  border-radius: 13px;
+  background: #3e7964;
+  color: #ffffff;
+  font-family: inherit;
   font-size: 14px;
-  font-weight: 650;
-
+  font-weight: 750;
   cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
+  transition: background 0.2s ease, box-shadow 0.2s ease,
     transform 0.2s ease;
 }
 
 .continue-button:hover {
-  background: #f1f7f4;
-
-  border-color: #bcd3cb;
-
+  background: #306651;
+  box-shadow: 0 7px 17px rgba(48, 102, 81, 0.13);
   transform: translateY(-1px);
 }
 
-
 /* =========================================================
-   RESPONSIVE
+   TABLET RESPONSIVENESS
    ========================================================= */
 
 @media (max-width: 800px) {
-
   .emotion-page {
-    padding: 28px 20px 45px;
+    padding: 28px 24px 45px;
+  }
+
+  .emotion-header {
+    margin-bottom: 26px;
   }
 
   .emotion-heading {
-    margin-top: 25px;
+    margin-top: 24px;
   }
 
   .emotion-heading h1 {
-    font-size: 31px;
+    font-size: 33px;
   }
 
   .emotion-card {
-    padding: 35px 25px;
+    padding: 36px 28px;
   }
 
   .emotion-result {
-    padding: 28px 22px;
+    padding: 27px;
   }
 
   .emotion-result-grid {
-    display: grid;
-  grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .emotion-result-grid:has(.emotion-result-item:only-child) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .emotion-result-grid:has(.emotion-confidence) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
+/* =========================================================
+   MOBILE RESPONSIVENESS
+   ========================================================= */
 
-@media (max-width: 500px) {
-
+@media (max-width: 600px) {
   .emotion-page {
-    padding: 22px 15px 40px;
+    padding: 23px 16px 36px;
+  }
+
+  .emotion-header {
+    margin-bottom: 24px;
+  }
+
+  .emotion-heading {
+    margin-top: 22px;
   }
 
   .emotion-heading h1 {
-    font-size: 28px;
+    font-size: 29px;
+    letter-spacing: -0.6px;
   }
 
   .emotion-heading p {
     font-size: 14px;
+    line-height: 1.7;
   }
 
   .emotion-card {
-    padding: 30px 18px;
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
 
-    border-radius: 18px;
+  .upload-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 17px;
+    border-radius: 19px;
+  }
+
+  .upload-icon span {
+    font-size: 26px;
+  }
+
+  .emotion-card h2 {
+    font-size: 22px;
+  }
+
+  .upload-description {
+    margin-bottom: 23px;
+    font-size: 13px;
+  }
+
+  .emotion-input-options {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .emotion-input-option {
+    min-height: 92px;
+    padding: 17px;
+    gap: 13px;
+  }
+
+  .input-option-icon {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+    border-radius: 13px;
+    font-size: 21px;
+  }
+
+  .selected-file {
+    padding: 15px;
+  }
+
+  .file-icon {
+    width: 43px;
+    height: 43px;
+    flex-basis: 43px;
+  }
+
+  .audio-player {
+    height: 42px;
+  }
+
+  .analyze-button {
+    min-height: 52px;
+    font-size: 14px;
   }
 
   .emotion-result {
-    padding: 23px 17px;
-
-    border-radius: 18px;
+    margin-top: 22px;
+    padding: 21px;
+    border-radius: 20px;
   }
 
-  .upload-formats {
-    line-height: 1.6;
+  .result-header {
+    align-items: flex-start;
+    gap: 13px;
+    padding-bottom: 20px;
   }
-} 
+
+  .result-icon {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+    border-radius: 15px;
+    font-size: 21px;
+  }
+
+  .result-header h2 {
+    font-size: 21px;
+  }
+
+  .result-header p {
+    font-size: 12px;
+  }
+
+  .emotion-result-grid,
+  .emotion-result-grid:has(.emotion-result-item:only-child),
+  .emotion-result-grid:has(.emotion-confidence) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .emotion-result-item {
+    min-height: 100px;
+    padding: 19px 20px;
+    border-radius: 15px;
+  }
+
+  .emotion-state {
+    font-size: 26px;
+  }
+
+  .emotion-species {
+    font-size: 20px;
+  }
+
+  .emotion-confidence {
+    font-size: 21px;
+  }
+
+  .continue-button {
+    min-height: 50px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .emotion-page *,
+  .emotion-page *::before,
+  .emotion-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

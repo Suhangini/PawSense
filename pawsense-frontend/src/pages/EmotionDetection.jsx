@@ -579,61 +579,43 @@ const EmotionDetection = () => {
           </div>
 
 
-          {/* RESULT GRID */}
+          
+{/* RESULT GRID */}
+<div className="emotion-result-grid">
+  <div className="emotion-result-item">
+    <span className="result-item-label">
+      Predicted Vocal Emotion
+    </span>
 
-          <div className="emotion-result-grid">
+    <strong className="emotion-state">
+      {result.emotion
+        ? result.emotion.charAt(0).toUpperCase() +
+          result.emotion.slice(1)
+        : "No prediction available"}
+    </strong>
+  </div>
+</div>
 
-            {/* Animal Species */}
+{/* CLASS PROBABILITIES — shown only if returned by the API */}
+{result.probabilities &&
+  Object.keys(result.probabilities).length > 0 && (
+    <div className="emotion-result-grid">
+      {Object.entries(result.probabilities).map(
+        ([emotion, probability]) => (
+          <div className="emotion-result-item" key={emotion}>
+            <span className="result-item-label">
+              {emotion.charAt(0).toUpperCase() + emotion.slice(1)}
+            </span>
 
-            <div className="emotion-result-item">
-
-              <span className="result-item-label">
-                Animal Species
-              </span>
-
-              <strong className="emotion-species">
-                {result.species_display || "Not available"}
-              </strong>
-
-            </div>
-
-
-            {/* Estimated State */}
-
-            <div className="emotion-result-item">
-
-              <span className="result-item-label">
-                Estimated State
-              </span>
-
-              <strong className="emotion-state">
-                {result.estimated_state_display ||
-                  result.estimated_state ||
-                  "Not available"}
-              </strong>
-
-            </div>
-
-
-            {/* Confidence */}
-
-            <div className="emotion-result-item">
-
-              <span className="result-item-label">
-                State Confidence
-              </span>
-
-              <strong className="emotion-confidence">
-
-                {typeof result.confidence === "number"
-                  ? `${(result.confidence * 100).toFixed(1)}%`
-                  : "Not available"}
-
-              </strong>
-
-            </div>
-
+            <strong className="emotion-confidence">
+              {(probability * 100).toFixed(1)}%
+            </strong>
           </div>
+        )
+      )}
+    </div>
+  )}
+
 
 
           {/* CONTINUE */}
