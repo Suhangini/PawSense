@@ -14,7 +14,6 @@ from app.routes import bcs
 app = FastAPI()
 
 # CORS Configuration
-```python
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
